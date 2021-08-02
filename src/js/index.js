@@ -29,7 +29,7 @@ function colorSwitchForBackground(color) {
   console.log(color);
 }
 
-let intervalColorSwitchForBackground = undefined;
+let intervalColorSwitchForBackground = null;
 
 function onStartBtnClick() {
   /* После нажатия кнопки ""startButton", с интервалом раз в секунду меняет цвет фона "body" на случайное значение 
