@@ -13,6 +13,8 @@ const refs = {
   stopButton: document.querySelector('button[data-action="stop"'),
 };
 
+let intervalColorSwitchForBodyBackground = null;
+
 /* Добавление слушателя на кнопки "startButton" и "stopButton"*/
 refs.startButton.addEventListener('click', onStartBtnClick);
 refs.stopButton.addEventListener('click', onStopBtnClick);
@@ -23,20 +25,18 @@ const randomIntegerFromInterval = (min, max) => {
 };
 
 /* Присвоение случайного цвета для "body" */
-function colorSwitchForBackground(color) {
+function colorSwitchForBodyBackground(color) {
   refs.body.style.backgroundColor = color;
 
   console.log(color);
 }
 
-let intervalColorSwitchForBackground = null;
-
 function onStartBtnClick() {
   /* После нажатия кнопки ""startButton", с интервалом раз в секунду меняет цвет фона "body" на случайное значение 
   из массива используя инлайн-стиль */
-  intervalColorSwitchForBackground = setInterval(randomNumber => {
+  intervalColorSwitchForBodyBackground = setInterval(randomNumber => {
     randomNumber = randomIntegerFromInterval(0, colors.length - 1);
-    colorSwitchForBackground(colors[randomNumber]);
+    colorSwitchForBodyBackground(colors[randomNumber]);
 
     console.log(randomNumber);
   }, 1000);
@@ -50,7 +50,7 @@ function onStartBtnClick() {
 
 function onStopBtnClick() {
   /* После нажатия кнопки ""stopButton" интервал очищается */
-  clearInterval(intervalColorSwitchForBackground);
+  clearInterval(intervalColorSwitchForBodyBackground);
 
   /* Кнопка "startButton" активна */
   refs.startButton.removeAttribute('disabled');
