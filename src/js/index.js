@@ -13,7 +13,7 @@ const refs = {
   stopButton: document.querySelector('button[data-action="stop"'),
 };
 
-let intervalColorSwitchForBodyBackground = null;
+let intervalColorSwitchForBodyBackgroundId = null;
 
 /* Добавление слушателя на кнопки "startButton" и "stopButton"*/
 refs.startButton.addEventListener('click', onStartBtnClick);
@@ -34,7 +34,7 @@ function colorSwitchForBodyBackground(color) {
 function onStartBtnClick() {
   /* После нажатия кнопки ""startButton", с интервалом раз в секунду меняет цвет фона "body" на случайное значение 
   из массива используя инлайн-стиль */
-  intervalColorSwitchForBodyBackground = setInterval(randomNumber => {
+  intervalColorSwitchForBodyBackgroundId = setInterval(randomNumber => {
     randomNumber = randomIntegerFromInterval(0, colors.length - 1);
     colorSwitchForBodyBackground(colors[randomNumber]);
 
@@ -50,7 +50,7 @@ function onStartBtnClick() {
 
 function onStopBtnClick() {
   /* После нажатия кнопки ""stopButton" интервал очищается */
-  clearInterval(intervalColorSwitchForBodyBackground);
+  clearInterval(intervalColorSwitchForBodyBackgroundId);
 
   /* Кнопка "startButton" активна */
   refs.startButton.removeAttribute('disabled');
