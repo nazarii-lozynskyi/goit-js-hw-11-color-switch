@@ -10,11 +10,37 @@
       integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
   </head>
 
   <body>
-    <button type="button" data-action="start">Start</button>
-    <button type="button" data-action="stop">Stop</button>
+    <div class="actions">
+      <button
+        type="button"
+        class="btn btn-outline-primary timer-btn"
+        data-action-start
+        data-action="start"
+      >
+        Start
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline-warning timer-btn"
+        data-action-stop
+        data-action="stop"
+      >
+        Stop
+      </button>
+    </div>
+    <!-- <button type="button" data-action="start">Start</button>
+    <button type="button" data-action="stop">Stop</button> -->
 
     <script src="./js/index.js"></script>
   </body>
